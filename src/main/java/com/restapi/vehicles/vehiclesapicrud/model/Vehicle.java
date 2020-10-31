@@ -7,6 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
 
+/**
+ * The type Vehicle.
+ *
+ * @author Harshad
+ */
 
 @Entity
 @Table( name = "vehicles" )
