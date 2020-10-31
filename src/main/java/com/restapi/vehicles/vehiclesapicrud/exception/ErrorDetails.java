@@ -2,11 +2,26 @@ package com.restapi.vehicles.vehiclesapicrud.exception;
 
 import java.util.Date;
 
+/**
+ * The type Error response.
+ *
+ * @author Harshad
+ */
+
 public class ErrorDetails {
 	private Date timestamp;
 	private String message;
 	private String details;
 
+	/**
+	   * Instantiates a new Error response.
+	   *
+	   * @param timestamp2 the timestamp
+	   * @param status the status
+	   * @param message2 the message
+	   * @param details the details
+	   */
+	
 	public ErrorDetails(Date timestamp2, String message2, String description) {
 		// TODO Auto-generated constructor stub
 		super();
