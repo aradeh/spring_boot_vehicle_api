@@ -16,7 +16,6 @@ public class ResourceNotFoundException extends Exception{
 
 	/**
 	   * Instantiates a new Resource not found exception.
-	   *
 	   * @param message the message
 	   */
 	

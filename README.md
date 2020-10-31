@@ -16,7 +16,11 @@ create database vehicle_database
 ### 3. Build and run the application using maven.
 ```
 mvn clean install
+mvn package
+java -jar target/<SNAPSHOT>.jar
 ```
+
+OR
 
 ```
 mvn spring-boot:run
