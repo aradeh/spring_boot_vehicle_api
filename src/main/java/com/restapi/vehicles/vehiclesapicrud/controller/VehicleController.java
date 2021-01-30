@@ -1,6 +1,8 @@
 package com.restapi.vehicles.vehiclesapicrud.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.restapi.vehicles.vehiclesapicrud.repository.VehicleRepository;
+import com.sipios.springsearch.anotation.SearchSpec;
 
 import java.util.*;
 
@@ -42,11 +45,21 @@ public class VehicleController {
 	   * @return the list
 	   */
 	
+    public VehicleController(VehicleRepository vehicleRepository) {
+        this.vehicleRepository = vehicleRepository;
+    }
+
+   
+    @GetMapping("vehicles")
+    public ResponseEntity<List<Vehicle>> searchForVehicle(@SearchSpec Specification<Vehicle> specs){
+    	return new ResponseEntity<>(vehicleRepository.findAll(Specification.where(specs)), HttpStatus.OK);
+    }
 	
-	@GetMapping("vehicles")
+	
+	/*@GetMapping("vehicles")
 	public List<Vehicle> getAllVehicle(){
 		return this.vehicleRepository.findAll();
-	}
+	}*/
 	
 	
 	//get vehicles by id //GET
